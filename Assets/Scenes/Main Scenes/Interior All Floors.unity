@@ -174,6 +174,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piso_1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e0d2039a9822a7247be2349bfd00ba02, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -373,6 +377,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piso_2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aedc836cb91fe944a90144c644e0e26b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -535,6 +543,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 59cac3c7192686f4eb04e5107a72bd7a, type: 3}
       propertyPath: m_Name
       value: Piso_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 59cac3c7192686f4eb04e5107a72bd7a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -822,6 +834,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piso_4
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a8f8399bbfa1b274889b52a013c0dcc4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -883,6 +899,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0c869d4d2b5eed94e8e527082ed31f81, type: 3}
       propertyPath: m_Name
       value: Piso_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0c869d4d2b5eed94e8e527082ed31f81, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -946,6 +966,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piso_7
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ece8f33f8535bb043a1954b71c0294e0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1007,6 +1031,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ba43514cd36765f4ebee4f8f1bc1663a, type: 3}
       propertyPath: m_Name
       value: Piso_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ba43514cd36765f4ebee4f8f1bc1663a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
