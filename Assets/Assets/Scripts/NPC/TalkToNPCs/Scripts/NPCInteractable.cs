@@ -5,18 +5,18 @@ using UnityEngine;
 public class NPCInteractable : MonoBehaviour, IInteractable
 {
 
-    [SerializeField] private List<string> dialogueLines; // Lista de falas
-    [SerializeField] private List<ChatBubble3D.IconType> dialogueIcons; // Lista de ícones para cada fala
+    [SerializeField] private List<string> dialogueLines;
+    [SerializeField] private List<ChatBubble3D.IconType> dialogueIcons;
     private int currentLineIndex = 0;
 
     private Animator animator;
     private NPCHeadLookAt npcHeadLookAt;
 
-    private ChatBubble3D activeChatBubble; // Referência à bolha de chat ativa
-    private Transform playerTransform; // Referência ao transform do jogador
+    private ChatBubble3D activeChatBubble;
+    private Transform playerTransform;
 
-    [SerializeField] private float interactionResetDistance = 5f; // Distância para resetar diálogo
-    private bool isPlayerNearby = false; // Controla se o jogador está próximo
+    [SerializeField] private float interactionResetDistance = 5f;
+    private bool isPlayerNearby = false;
 
     private void Awake()
     {
@@ -30,26 +30,23 @@ public class NPCInteractable : MonoBehaviour, IInteractable
         {
             float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
 
-            // Se o jogador sair do alcance de interação, resete o diálogo
             if (distanceToPlayer > interactionResetDistance && isPlayerNearby)
             {
                 ResetDialogue();
-                isPlayerNearby = false; // Jogador já está fora do alcance
+                isPlayerNearby = false;
             }
 
-            // Se o jogador voltar ao alcance
             if (distanceToPlayer <= interactionResetDistance && !isPlayerNearby)
             {
-                isPlayerNearby = true; // Jogador voltou ao alcance
+                isPlayerNearby = true;
             }
         }
     }
 
     public void Interact(Transform interactorTransform)
     {
-        playerTransform = interactorTransform; // Armazena a referência ao jogador
+        playerTransform = interactorTransform;
 
-        // Se houver uma mensagem ativa, destrua antes de criar outra
         if (activeChatBubble != null)
         {
             Destroy(activeChatBubble.gameObject);
@@ -57,22 +54,20 @@ public class NPCInteractable : MonoBehaviour, IInteractable
 
         if (currentLineIndex < dialogueLines.Count)
         {
-            // Cria a próxima linha da narrativa
             activeChatBubble = ChatBubble3D.Create(
                 transform,
                 new Vector3(-.3f, 1.7f, 0f),
-                dialogueIcons[currentLineIndex], // Ícone correspondente à linha
+                dialogueIcons[currentLineIndex],
                 dialogueLines[currentLineIndex]
             );
             currentLineIndex++;
         }
         else
         {
-            // Final da narrativa
             activeChatBubble = ChatBubble3D.Create(
                 transform,
                 new Vector3(-.3f, 1.7f, 0f),
-                ChatBubble3D.IconType.Neutral, // Ícone padrão para o final
+                ChatBubble3D.IconType.Neutral,
                 "That's all for now!"
             );
         }
@@ -95,7 +90,6 @@ public class NPCInteractable : MonoBehaviour, IInteractable
 
     private void ResetDialogue()
     {
-        // Reseta o índice de diálogo e destrói a bolha ativa, se existir
         currentLineIndex = 0;
         if (activeChatBubble != null)
         {

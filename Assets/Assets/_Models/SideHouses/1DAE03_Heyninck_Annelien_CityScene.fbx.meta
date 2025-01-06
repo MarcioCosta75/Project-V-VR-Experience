@@ -1,0 +1,299 @@
+fileFormatVersion: 2
+guid: 38ebcbf445c7fd5468c9b2351fe5e351
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BASIC GREY
+    second: {fileID: 2100000, guid: af5edacab5a07a442aa621b5f2e4516a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: City_scene_hor_tileable
+    second: {fileID: 2100000, guid: b44daea51c2fd5440a82388d3a225849, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: City_scene_pedestal
+    second: {fileID: 2100000, guid: 673ba707ad0ba4d4eb58f02dc42264e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: City_scene_wall
+    second: {fileID: 2100000, guid: 6f09e0e54173b0d4aa3fc20f625ca3b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Decals_material
+    second: {fileID: 2100000, guid: 87b1916fe81b7fc49b28c518f5d1d372, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gieter_board_material
+    second: {fileID: 2100000, guid: a35ae9bbc1468514394e1bc8c7166f26, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_WINDOWS
+    second: {fileID: 2100000, guid: 043870a90e66abe45b5d4b44b0a6eb85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Restaurant_Firstfloor
+    second: {fileID: 2100000, guid: 12400ca3f70977e4cb234714f1b9a987, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Restaurant_Groundfloor
+    second: {fileID: 2100000, guid: 32f21f7feaea5be44ab3d24688bca83e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Restaurant_Roof
+    second: {fileID: 2100000, guid: 4d3ce4c7c0b58024fb3d0d4c701e4368, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Restaurant_Secondfloor
+    second: {fileID: 2100000, guid: 0b3957cbfbe2a8143be667a653042364, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Restaurant_Trim
+    second: {fileID: 2100000, guid: 7d656be574edbf445807aed2b7f11fbc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Restaurant_Unique
+    second: {fileID: 2100000, guid: ce276403a79c0d246b46479fe1d8049f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SouvenirShop_Firstfloor
+    second: {fileID: 2100000, guid: 7dd013f5c59ffd3428db78b869970a83, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SouvenirShop_Groundlevel
+    second: {fileID: 2100000, guid: 597fc5ba9c66a57438bd159e9394a90e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SouvenirShop_Roof
+    second: {fileID: 2100000, guid: e513582f0a3de22448142e754f0d901c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SouvenirShop_Secondfloor
+    second: {fileID: 2100000, guid: 47a4a27e7ba32c64e8796fead5f8ab66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SouvenirShop_Trim
+    second: {fileID: 2100000, guid: d34690acd95eb9149a995cd967f86404, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SouvenirShop_Unique
+    second: {fileID: 2100000, guid: 4a96714512c0f9848a9a4f369b5dc36e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tram_tex
+    second: {fileID: 2100000, guid: 8b4d2e63c1d97084bac07ba52ae7474a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: YOUR MATERIAL
+    second: {fileID: 2100000, guid: 3b1ec5aaa20aa364e9ac02b06ad4adfb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: city_scene_tiles_color
+    second: {fileID: 2100000, guid: 5762f8e38c9ab1c4ebac1414e9a3080c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: city_scene_tiles_square
+    second: {fileID: 2100000, guid: 9e5fb72ea9e4331468df750aa4d94185, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: container_mat
+    second: {fileID: 2100000, guid: 1ab7321ab1c510b42bf06225792e9ea1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flowershop_board_material
+    second: {fileID: 2100000, guid: f93a15270cff5f24d8958c80cacb7e0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fruitshop_firstfloor
+    second: {fileID: 2100000, guid: 39ccdefdfa1aa6448800ab56721b080d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fruitshop_firstfloorwalls
+    second: {fileID: 2100000, guid: 54326ae77a756074d8b130e4f708dd48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fruitshop_groundfloor
+    second: {fileID: 2100000, guid: dafc76148cbc1f445b28ebc079e71ce6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fruitshop_opacity
+    second: {fileID: 2100000, guid: 9fe8530995d31984db0db83eec10cb61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fruitshop_roof
+    second: {fileID: 2100000, guid: db53b7761dda06e4f9b01c898b4ba174, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fruitshop_secondfloor
+    second: {fileID: 2100000, guid: 264e0e5307d6e1b4f8db99c4ac57efb9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fruitshop_specialcolor
+    second: {fileID: 2100000, guid: f8d43f9082b1ede4495df8910dae1ed8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fruitshop_trim
+    second: {fileID: 2100000, guid: 356194cdaccde5c418f0df460442d823, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fruitshop_unique
+    second: {fileID: 2100000, guid: 90b20b23b630553429089d0b429f79fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material2
+    second: {fileID: 2100000, guid: ae5aabba93c202d419cdb76ac98a20e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: parasol_material
+    second: {fileID: 2100000, guid: a27a5db92e4b189448ff5afbcbcbc30d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plants_material
+    second: {fileID: 2100000, guid: 3c1a1863b79c5524998739c48bd8087f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: table_chair_material
+    second: {fileID: 2100000, guid: 9fbb39842206703448f37e3b96fd1eed, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

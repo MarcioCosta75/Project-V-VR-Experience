@@ -12,7 +12,7 @@ public class ChatBubble3D : MonoBehaviour
         ChatBubble3D chatBubble = chatBubbleTransform.GetComponent<ChatBubble3D>();
         chatBubble.Setup(iconType, text);
 
-        return chatBubble; // Retorna a instância criada
+        return chatBubble;
     }
 
     public enum IconType
