@@ -1,34 +1,22 @@
-﻿/* 
-    ------------------- Code Monkey -------------------
-
-    Thank you for downloading this package
-    I hope you find it useful in your projects
-    If you have any questions let me know
-    Cheers!
-
-               unitycodemonkey.com
-    --------------------------------------------------
- */
-
-using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro;
 using UnityEngine;
-using TMPro;
 
-public class ChatBubble3D : MonoBehaviour {
+public class ChatBubble3D : MonoBehaviour
+{
 
-    public static void Create(Transform parent, Vector3 localPosition, IconType iconType, string text) {
+    public static ChatBubble3D Create(Transform parent, Vector3 localPosition, IconType iconType, string text)
+    {
         Transform chatBubbleTransform = Instantiate(GameAssets.i.pfChatBubble, parent);
         chatBubbleTransform.localPosition = localPosition;
 
-        chatBubbleTransform.GetComponent<ChatBubble3D>().Setup(iconType, text);
+        ChatBubble3D chatBubble = chatBubbleTransform.GetComponent<ChatBubble3D>();
+        chatBubble.Setup(iconType, text);
 
-        Destroy(chatBubbleTransform.gameObject, 6f);
+        return chatBubble; // Retorna a instância criada
     }
 
-
-
-    public enum IconType {
+    public enum IconType
+    {
         Happy,
         Neutral,
         Angry,
@@ -43,14 +31,16 @@ public class ChatBubble3D : MonoBehaviour {
     private SpriteRenderer iconSpriteRenderer;
     private TextMeshPro textMeshPro;
 
-    private void Awake() {
+    private void Awake()
+    {
         backgroundSpriteRenderer = transform.Find("Background").GetComponent<SpriteRenderer>();
         backgroundCube = transform.Find("BackgroundCube");
         iconSpriteRenderer = transform.Find("Icon").GetComponent<SpriteRenderer>();
         textMeshPro = transform.Find("Text").GetComponent<TextMeshPro>();
     }
 
-    private void Setup(IconType iconType, string text) {
+    public void Setup(IconType iconType, string text)
+    {
         textMeshPro.SetText(text);
         textMeshPro.ForceMeshUpdate();
         Vector2 textSize = textMeshPro.GetRenderedValues(false);
@@ -60,7 +50,7 @@ public class ChatBubble3D : MonoBehaviour {
         backgroundCube.localScale = textSize + padding * .5f;
 
         Vector3 offset = new Vector3(-3f, 0f);
-        backgroundSpriteRenderer.transform.localPosition = 
+        backgroundSpriteRenderer.transform.localPosition =
             new Vector3(backgroundSpriteRenderer.size.x / 2f, 0f) + offset;
         backgroundCube.localPosition =
             new Vector3(backgroundSpriteRenderer.size.x / 2f, 0f, +.1f) + offset;
@@ -70,13 +60,14 @@ public class ChatBubble3D : MonoBehaviour {
         TextWriter.AddWriter_Static(textMeshPro, text, .03f, true, true, () => { });
     }
 
-    private Sprite GetIconSprite(IconType iconType) {
-        switch (iconType) {
+    private Sprite GetIconSprite(IconType iconType)
+    {
+        switch (iconType)
+        {
             default:
-            case IconType.Happy:    return happyIconSprite;
-            case IconType.Neutral:  return neutralIconSprite;
-            case IconType.Angry:    return angryIconSprite;
+            case IconType.Happy: return happyIconSprite;
+            case IconType.Neutral: return neutralIconSprite;
+            case IconType.Angry: return angryIconSprite;
         }
     }
-
 }
