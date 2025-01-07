@@ -12,11 +12,17 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     private Animator animator;
     private NPCHeadLookAt npcHeadLookAt;
 
-    private ChatBubble3D activeChatBubble;
+    private ChatBubble3D activeChatBubble; 
     private Transform playerTransform;
 
     [SerializeField] private float interactionResetDistance = 5f;
     private bool isPlayerNearby = false;
+
+    [Header("Door Settings")]
+    [SerializeField] private GameObject entranceDoors; 
+    [SerializeField] private Animator doorAnimator;
+    [SerializeField] private AudioSource doorSound;
+    private bool hasOpenedDoors = false;
 
     private void Awake()
     {
@@ -38,7 +44,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
 
             if (distanceToPlayer <= interactionResetDistance && !isPlayerNearby)
             {
-                isPlayerNearby = true;
+                isPlayerNearby = true; 
             }
         }
     }
@@ -70,12 +76,41 @@ public class NPCInteractable : MonoBehaviour, IInteractable
                 ChatBubble3D.IconType.Neutral,
                 "That's all for now!"
             );
+
+            if (!hasOpenedDoors)
+            {
+                OpenDoors();
+                hasOpenedDoors = true;
+            }
         }
 
         animator.SetTrigger("Talk");
 
         float playerHeight = 1.7f;
         npcHeadLookAt.LookAtPosition(interactorTransform.position + Vector3.up * playerHeight);
+    }
+
+    private void OpenDoors()
+    {
+        if (doorAnimator != null)
+        {
+            doorAnimator.SetTrigger("Open");
+        }
+        if (doorSound != null)
+        {
+            doorSound.Play();
+        }
+
+        StartCoroutine(DisableDoorsAfterAnimation(3f));
+    }
+
+    private IEnumerator DisableDoorsAfterAnimation(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (entranceDoors != null)
+        {
+            entranceDoors.SetActive(false); 
+        }
     }
 
     public string GetInteractText()
