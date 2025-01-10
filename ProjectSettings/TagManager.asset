@@ -8,6 +8,9 @@ TagManager:
   - Red
   - Blue
   - Yellow
+  - RedTower
+  - BlueTower
+  - YellowTower
   layers:
   - Default
   - TransparentFX

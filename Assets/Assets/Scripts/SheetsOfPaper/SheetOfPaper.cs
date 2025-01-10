@@ -5,6 +5,8 @@ public class SheetOfPaper : MonoBehaviour
     [SerializeField] private string hintForNextSheet; 
     [SerializeField] private SheetOfPaper nextSheet; 
     [SerializeField] private bool isFinalSheet = false;
+    [SerializeField] private AudioClip collectSound;
+    [SerializeField] private AudioSource audioSource;
 
     private void Start()
     {
@@ -13,6 +15,8 @@ public class SheetOfPaper : MonoBehaviour
 
     public void Collect()
     {
+        PlayCollectSound();
+
         PortfolioManager.Instance.CollectSheet(this);
 
         gameObject.SetActive(false);
@@ -20,6 +24,14 @@ public class SheetOfPaper : MonoBehaviour
         if (nextSheet != null)
         {
             nextSheet.gameObject.SetActive(true);
+        }
+    }
+
+    private void PlayCollectSound()
+    {
+        if (audioSource != null && collectSound != null)
+        {
+            audioSource.PlayOneShot(collectSound);
         }
     }
 

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class NPCInteractable : MonoBehaviour, IInteractable
 {
-    [SerializeField] private List<string> dialogueLines; // Dialogue lines
-    [SerializeField] private List<ChatBubble3D.IconType> dialogueIcons; // Corresponding icons
-    [SerializeField] private List<AudioClip> dialogueClips; // List of AudioClips corresponding to each dialogue line
-    [SerializeField] private AudioSource dialogueAudioSource; // AudioSource for playing dialogue sounds
+    [SerializeField] private List<string> dialogueLines;
+    [SerializeField] private List<ChatBubble3D.IconType> dialogueIcons;
+    [SerializeField] private List<AudioClip> dialogueClips;
+    [SerializeField] private AudioSource dialogueAudioSource;
 
     private int currentLineIndex = 0;
 
@@ -31,10 +31,9 @@ public class NPCInteractable : MonoBehaviour, IInteractable
         animator = GetComponent<Animator>();
         npcHeadLookAt = GetComponent<NPCHeadLookAt>();
 
-        // Ensure the AudioSource is properly configured
         if (dialogueAudioSource != null)
         {
-            dialogueAudioSource.loop = false; // Dialogue sounds should not loop
+            dialogueAudioSource.loop = false;
         }
     }
 
@@ -65,7 +64,6 @@ public class NPCInteractable : MonoBehaviour, IInteractable
         {
             Destroy(activeChatBubble.gameObject);
 
-            // Stop the current dialogue sound
             StopDialogueSound();
         }
 
@@ -78,7 +76,6 @@ public class NPCInteractable : MonoBehaviour, IInteractable
                 dialogueLines[currentLineIndex]
             );
 
-            // Play the corresponding dialogue sound
             PlayDialogueSound(currentLineIndex);
 
             currentLineIndex++;
@@ -98,7 +95,6 @@ public class NPCInteractable : MonoBehaviour, IInteractable
                 hasOpenedDoors = true;
             }
 
-            // Stop the sound when the dialogue ends
             StopDialogueSound();
         }
 
@@ -168,7 +164,6 @@ public class NPCInteractable : MonoBehaviour, IInteractable
             activeChatBubble = null;
         }
 
-        // Stop dialogue sound on reset
         StopDialogueSound();
     }
 }

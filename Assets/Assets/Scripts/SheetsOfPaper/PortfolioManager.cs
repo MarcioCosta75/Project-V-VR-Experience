@@ -10,7 +10,11 @@ public class PortfolioManager : MonoBehaviour
     [SerializeField] private UIController uiController;
     [SerializeField] private float finalMessageDisplayTime = 3f;
 
-    private int currentSheetIndex = 0;
+    [Header("Tower Game Settings")]
+    [SerializeField] private GameObject towerGame;
+    [SerializeField] private AudioSource activationSound;
+
+    private int currentSheetIndex = 1;
 
     private void Awake()
     {
@@ -35,11 +39,16 @@ public class PortfolioManager : MonoBehaviour
         {
             Debug.LogError("No sheets of paper are set in the PortfolioManager or the first sheet is missing!");
         }
+
+        if (towerGame != null)
+        {
+            towerGame.SetActive(false);
+        }
     }
 
     public void CollectSheet(SheetOfPaper sheet)
     {
-        if (currentSheetIndex == 0)
+        if (currentSheetIndex == 1)
         {
             uiController.ShowUI();
         }
@@ -63,6 +72,21 @@ public class PortfolioManager : MonoBehaviour
 
         yield return new WaitForSeconds(finalMessageDisplayTime);
 
-        uiController.HideUI();;
+        uiController.HideUI();
+
+        ActivateTowerGame();
+    }
+
+    private void ActivateTowerGame()
+    {
+        if (towerGame != null)
+        {
+            towerGame.SetActive(true);
+
+            if (activationSound != null)
+            {
+                activationSound.Play();
+            }
+        }
     }
 }
