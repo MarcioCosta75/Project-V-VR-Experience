@@ -27,7 +27,7 @@ public class UIController : MonoBehaviour
 
     public void UpdateProgress(int collected, int total)
     {
-        progressText.text = $"Sheets Collected: {collected}/{total}";
+        progressText.text = $"Pages Collected: {collected}/{total}";
     }
 
     public void ShowHint(string hint)

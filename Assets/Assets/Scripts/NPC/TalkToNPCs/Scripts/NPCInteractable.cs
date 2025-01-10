@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class NPCInteractable : MonoBehaviour, IInteractable
 {
+    [SerializeField] private List<string> dialogueLines; // Dialogue lines
+    [SerializeField] private List<ChatBubble3D.IconType> dialogueIcons; // Corresponding icons
+    [SerializeField] private List<AudioClip> dialogueClips; // List of AudioClips corresponding to each dialogue line
+    [SerializeField] private AudioSource dialogueAudioSource; // AudioSource for playing dialogue sounds
 
-    [SerializeField] private List<string> dialogueLines;
-    [SerializeField] private List<ChatBubble3D.IconType> dialogueIcons;
     private int currentLineIndex = 0;
 
     private Animator animator;
     private NPCHeadLookAt npcHeadLookAt;
 
-    private ChatBubble3D activeChatBubble; 
+    private ChatBubble3D activeChatBubble;
     private Transform playerTransform;
 
     [SerializeField] private float interactionResetDistance = 5f;
     private bool isPlayerNearby = false;
 
     [Header("Door Settings")]
-    [SerializeField] private GameObject entranceDoors; 
+    [SerializeField] private GameObject entranceDoors;
     [SerializeField] private Animator doorAnimator;
     [SerializeField] private AudioSource doorSound;
     private bool hasOpenedDoors = false;
@@ -28,6 +30,12 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     {
         animator = GetComponent<Animator>();
         npcHeadLookAt = GetComponent<NPCHeadLookAt>();
+
+        // Ensure the AudioSource is properly configured
+        if (dialogueAudioSource != null)
+        {
+            dialogueAudioSource.loop = false; // Dialogue sounds should not loop
+        }
     }
 
     private void Update()
@@ -44,7 +52,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
 
             if (distanceToPlayer <= interactionResetDistance && !isPlayerNearby)
             {
-                isPlayerNearby = true; 
+                isPlayerNearby = true;
             }
         }
     }
@@ -56,6 +64,9 @@ public class NPCInteractable : MonoBehaviour, IInteractable
         if (activeChatBubble != null)
         {
             Destroy(activeChatBubble.gameObject);
+
+            // Stop the current dialogue sound
+            StopDialogueSound();
         }
 
         if (currentLineIndex < dialogueLines.Count)
@@ -66,6 +77,10 @@ public class NPCInteractable : MonoBehaviour, IInteractable
                 dialogueIcons[currentLineIndex],
                 dialogueLines[currentLineIndex]
             );
+
+            // Play the corresponding dialogue sound
+            PlayDialogueSound(currentLineIndex);
+
             currentLineIndex++;
         }
         else
@@ -82,12 +97,32 @@ public class NPCInteractable : MonoBehaviour, IInteractable
                 OpenDoors();
                 hasOpenedDoors = true;
             }
+
+            // Stop the sound when the dialogue ends
+            StopDialogueSound();
         }
 
         animator.SetTrigger("Talk");
 
         float playerHeight = 1.7f;
         npcHeadLookAt.LookAtPosition(interactorTransform.position + Vector3.up * playerHeight);
+    }
+
+    private void PlayDialogueSound(int index)
+    {
+        if (dialogueAudioSource != null && index < dialogueClips.Count && dialogueClips[index] != null)
+        {
+            dialogueAudioSource.clip = dialogueClips[index];
+            dialogueAudioSource.Play();
+        }
+    }
+
+    private void StopDialogueSound()
+    {
+        if (dialogueAudioSource != null)
+        {
+            dialogueAudioSource.Stop();
+        }
     }
 
     private void OpenDoors()
@@ -109,7 +144,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
         yield return new WaitForSeconds(delay);
         if (entranceDoors != null)
         {
-            entranceDoors.SetActive(false); 
+            entranceDoors.SetActive(false);
         }
     }
 
@@ -126,10 +161,14 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     private void ResetDialogue()
     {
         currentLineIndex = 0;
+
         if (activeChatBubble != null)
         {
             Destroy(activeChatBubble.gameObject);
             activeChatBubble = null;
         }
+
+        // Stop dialogue sound on reset
+        StopDialogueSound();
     }
 }

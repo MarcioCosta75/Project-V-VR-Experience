@@ -6,9 +6,9 @@ public class PortfolioManager : MonoBehaviour
 {
     public static PortfolioManager Instance { get; private set; }
 
-    [SerializeField] private List<SheetOfPaper> sheetsOfPaper; // List of all sheets in the portfolio
-    [SerializeField] private UIController uiController; // UI controller
-    [SerializeField] private float finalMessageDisplayTime = 3f; // Time to display the final message
+    [SerializeField] private List<SheetOfPaper> sheetsOfPaper;
+    [SerializeField] private UIController uiController;
+    [SerializeField] private float finalMessageDisplayTime = 3f;
 
     private int currentSheetIndex = 0;
 
@@ -59,7 +59,7 @@ public class PortfolioManager : MonoBehaviour
 
     private IEnumerator HandleFinalSheet()
     {
-        uiController.ShowHint("Portfolio complete! Proceed to the next challenge.");
+        uiController.ShowHint("You have completed the Design Portfolio! Solve the last challenge, and you will find the Design Student!");
 
         yield return new WaitForSeconds(finalMessageDisplayTime);
 
